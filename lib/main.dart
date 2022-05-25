@@ -1,3 +1,5 @@
+library gb_e_kyc_package;
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -6,17 +8,17 @@ import 'package:gb_e_kyc_package/gb_e_kyc_package.dart';
 import 'package:after_layout/after_layout.dart';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(const MainAppEKyc());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MainAppEKyc extends StatefulWidget {
+  const MainAppEKyc({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MainAppEKyc> createState() => _MainAppEKycState();
 }
 
-class _MyAppState extends State<MyApp> with AfterLayoutMixin {
+class _MainAppEKycState extends State<MainAppEKyc> with AfterLayoutMixin {
   @override
   void initState() {
     // dotenv.load(fileName: "assets/.env");
