@@ -2,7 +2,6 @@ library gb_e_kyc_package;
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// A Calculator.
 class Calculator {

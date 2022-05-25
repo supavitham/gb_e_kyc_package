@@ -1,22 +1,38 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gb_e_kyc_package/gb_e_kyc_package.dart';
+import 'package:after_layout/after_layout.dart';
 
 void main() async {
-  await dotenv.load(fileName: "assets/.env");
-
-  String? hostRegister = dotenv.env['host3003'];
-  String? hostGateway = dotenv.env['host3006'];
-  String? authorization2 = dotenv.env['authorization2'];
-  print("hostRegister>>>> $hostRegister -- $hostGateway -- $authorization2");
-
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with AfterLayoutMixin {
+  @override
+  void initState() {
+    // dotenv.load(fileName: "assets/.env");
+    super.initState();
+  }
+
+  @override
+  Future<FutureOr<void>> afterFirstLayout(BuildContext context)  async {
+    await dotenv.load(fileName: "assets/.env");
+
+    String? hostRegister = dotenv.env['host3003'];
+    String? hostGateway = dotenv.env['host3006'];
+    String? authorization2 = dotenv.env['authorization2'];
+    print("hostRegister>>>> $hostRegister -- $hostGateway -- $authorization2");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +40,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page2'),
     );
   }
 }
