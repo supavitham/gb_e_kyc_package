@@ -23,6 +23,10 @@ class MainAppEKyc extends StatefulWidget {
 }
 
 class _MainAppEKycState extends State<MainAppEKyc> with AfterLayoutMixin {
+  Future<void> loadENV() async {
+    await dotenv.load(fileName: "assets/.env");
+  }
+
   @override
   void initState() {
     // dotenv.load(fileName: "assets/.env");
@@ -31,8 +35,7 @@ class _MainAppEKycState extends State<MainAppEKyc> with AfterLayoutMixin {
 
   @override
   Future<FutureOr<void>> afterFirstLayout(BuildContext context) async {
-    await dotenv.load(fileName: "assets/.env");
-
+    await loadENV();
     String? hostRegister = dotenv.env['host3003'];
     String? hostGateway = dotenv.env['host3006'];
     String? authorization2 = dotenv.env['authorization2'];

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gb_e_kyc_package/main.dart';
-import 'package:gb_e_kyc_package/screen/e_kyc_screen.dart';
 
 class EKYCButtonWidget extends StatefulWidget {
   final BoxDecoration? boxDecorationContainer;
@@ -23,7 +22,7 @@ class _EKYCButtonWidgetState extends State<EKYCButtonWidget> {
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const EKYCScreen()),
+        MaterialPageRoute(builder: (context) => const MainAppEKyc()),
       ),
       child: Container(
         width: widget.widthContainer,
