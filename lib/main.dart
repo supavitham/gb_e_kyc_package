@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gb_e_kyc_package/gb_e_kyc_package.dart';
 import 'package:after_layout/after_layout.dart';
+import 'package:gb_e_kyc_package/screen/e_kyc_screen.dart';
+import 'package:gb_e_kyc_package/utility/lang/translations.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 void main() async {
@@ -38,12 +41,17 @@ class _MainAppEKycState extends State<MainAppEKyc> with AfterLayoutMixin {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
+      translations: Messages(),
+      locale: Locale('th', 'TH'),
+      fallbackLocale: const Locale('th', 'TH'),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page3'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page3'),
+      home: EKYCScreen(),
     );
   }
 }
@@ -65,7 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Lottie.network('https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json'),
+      body: Column(
+        children: [
+          Lottie.network('https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json'),
+          Text('register'.tr),
+        ],
+      ),
     );
   }
 }
