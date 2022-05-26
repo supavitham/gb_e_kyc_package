@@ -13,7 +13,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> with AfterLayoutMixin {
   Future<void> loadENV() async {
-    await dotenv.load(fileName: "assets/.env");
+    await dotenv.load(fileName: ".env");
   }
 
   @override
@@ -22,7 +22,7 @@ class _MainScreenState extends State<MainScreen> with AfterLayoutMixin {
     String? hostRegister = dotenv.env['host3003'];
     String? hostGateway = dotenv.env['host3006'];
     String? authorization2 = dotenv.env['authorization2'];
-    print("hostRegister>>>> $hostRegister -- $hostGateway -- $authorization2");
+    print("hostRegister22>>>> $hostRegister -- $hostGateway -- $authorization2");
   }
 
   @override

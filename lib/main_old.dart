@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gb_e_kyc_package/gb_e_kyc_package.dart';
 import 'package:after_layout/after_layout.dart';
+import 'package:gb_e_kyc_package/main.dart';
 import 'package:gb_e_kyc_package/screen/e_kyc_screen.dart';
 import 'package:gb_e_kyc_package/utility/lang/translations.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,7 @@ class MainAppEKyc extends StatefulWidget {
 
 class _MainAppEKycState extends State<MainAppEKyc> with AfterLayoutMixin {
   Future<void> loadENV() async {
-    await dotenv.load(fileName: "assets/.env");
+    await dotenv.load(fileName: ".env");
   }
 
   @override
@@ -39,7 +40,7 @@ class _MainAppEKycState extends State<MainAppEKyc> with AfterLayoutMixin {
     String? hostRegister = dotenv.env['host3003'];
     String? hostGateway = dotenv.env['host3006'];
     String? authorization2 = dotenv.env['authorization2'];
-    print("hostRegister>>>> $hostRegister -- $hostGateway -- $authorization2");
+    print("hostRegister11>>>> $hostRegister -- $hostGateway -- $authorization2");
   }
 
   @override
@@ -54,7 +55,8 @@ class _MainAppEKycState extends State<MainAppEKyc> with AfterLayoutMixin {
         primarySwatch: Colors.blue,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page3'),
-      home: EKYCScreen(),
+      // home: EKYCScreen(),
+      home: MainScreen(),
     );
   }
 }
