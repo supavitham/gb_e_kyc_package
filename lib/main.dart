@@ -31,6 +31,11 @@ class _MainScreenState extends State<MainScreen> with AfterLayoutMixin {
       body: Column(
         children: [
           Text("klsdfmsdlk"),
+          SizedBox(
+            height: 100,
+            width: 100,
+            child: Image.asset('assets/images/Thailand-flag.png'),
+          ),
         ],
       ),
     );
